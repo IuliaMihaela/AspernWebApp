@@ -15,45 +15,45 @@ def home():
     return render_template('index.html')
 
 
-@app.route("/data/final/aspern_blocks_final.geojson", methods=['GET'])
-def blocks():
-    with open(join('data', 'aspern_blocks_final.geojson'), encoding='utf-8') as f:
-        return f.read()
-
-@app.route("/data/final/aspern_landcover_final.geojson", methods=['GET'])
-def landcover():
-    with open(join('data', 'aspern_landcover_final.geojson'), encoding='utf-8') as f:
-        return f.read()
-
-@app.route("/data/final/aspern_bkmBlocks.geojson", methods=['GET'])
-def bkmblocks():
-    with open(join('data', 'aspern_bkmBlocks.geojson'), encoding='utf-8') as f:
-        return f.read()
-
-@app.route("/data/final/aspern_roads.geojson", methods=['GET'])
-def roads():
-    with open(join('data', 'aspern_roads.geojson'), encoding='utf-8') as f:
-        return f.read()
-
-@app.route("/data/final/aspern_publiclines.geojson", methods=['GET'])
-def publines():
-    with open(join('data', 'aspern_publiclines.geojson'), encoding='utf-8') as f:
-        return f.read()
-
-@app.route("/data/final/aspern_trees_blocks.geojson", methods=['GET'])
-def trees():
-    with open(join('data', 'aspern_trees_blocks.geojson'), encoding='utf-8') as f:
-        return f.read()
-
-@app.route("/data/final/aspern_publicstops.geojson", methods=['GET'])
-def pubstops():
-    with open(join('data', 'aspern_publicstops.geojson'), encoding='utf-8') as f:
-        return f.read()
-
-@app.route("/data/final/shops.geojson", methods=['GET'])
-def shops():
-    with open(join('data', 'shops.geojson'), encoding='utf-8') as f:
-        return f.read()
+# @app.route("/data/final/aspern_blocks_final.geojson", methods=['GET'])
+# def blocks():
+#     with open(join('data', 'aspern_blocks_final.geojson'), encoding='utf-8') as f:
+#         return f.read()
+#
+# @app.route("/data/final/aspern_landcover_final.geojson", methods=['GET'])
+# def landcover():
+#     with open(join('data', 'aspern_landcover_final.geojson'), encoding='utf-8') as f:
+#         return f.read()
+#
+# @app.route("/data/final/aspern_bkmBlocks.geojson", methods=['GET'])
+# def bkmblocks():
+#     with open(join('data', 'aspern_bkmBlocks.geojson'), encoding='utf-8') as f:
+#         return f.read()
+#
+# @app.route("/data/final/aspern_roads.geojson", methods=['GET'])
+# def roads():
+#     with open(join('data', 'aspern_roads.geojson'), encoding='utf-8') as f:
+#         return f.read()
+#
+# @app.route("/data/final/aspern_publiclines.geojson", methods=['GET'])
+# def publines():
+#     with open(join('data', 'aspern_publiclines.geojson'), encoding='utf-8') as f:
+#         return f.read()
+#
+# @app.route("/data/final/aspern_trees_blocks.geojson", methods=['GET'])
+# def trees():
+#     with open(join('data', 'aspern_trees_blocks.geojson'), encoding='utf-8') as f:
+#         return f.read()
+#
+# @app.route("/data/final/aspern_publicstops.geojson", methods=['GET'])
+# def pubstops():
+#     with open(join('data', 'aspern_publicstops.geojson'), encoding='utf-8') as f:
+#         return f.read()
+#
+# @app.route("/data/final/shops.geojson", methods=['GET'])
+# def shops():
+#     with open(join('data', 'shops.geojson'), encoding='utf-8') as f:
+#         return f.read()
 
 
 

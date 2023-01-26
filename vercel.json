@@ -12,5 +12,6 @@
       "src": "/(.*)",
       "dest": "./index.py"
     }
-  ]
+  ],
+  "regions": ["iad1"]
 }
