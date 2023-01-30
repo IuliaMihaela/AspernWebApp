@@ -168,7 +168,9 @@ const graph_colors_zoning = {'recreation area':
 const graph_colors_shannon_index = '#811515';
 
 
-const file_path = ["../data/final/aspern_blocks_final.geojson", "../data/final/aspern_landcover_final.geojson", "../data/final/aspern_bkmBlocks.geojson",  "../data/final/aspern_roads.geojson", "../data/final/aspern_publiclines.geojson", "../data/final/aspern_trees_blocks.geojson", "../data/final/aspern_publicstops.geojson", "../data/final/shops.geojson"]
+// const file_path = ["../data/final/aspern_blocks_final.geojson", "../data/final/aspern_landcover_final.geojson", "../data/final/aspern_bkmBlocks.geojson",  "../data/final/aspern_roads.geojson", "../data/final/aspern_publiclines.geojson", "../data/final/aspern_trees_blocks.geojson", "../data/final/aspern_publicstops.geojson", "../data/final/shops.geojson"]
+const file_path = ["blocks", "landcover", "bkmBlocks",  "roads", "publiclines", "trees", "publicstops", "shops"]
+
 
 //..............open all files...............//
 cnt = 0, xmlhttp = new XMLHttpRequest(), method = "GET";
@@ -278,8 +280,8 @@ function getXml() {
 }
 
 async function getGraphData(data, prop){
-    const query = await fetch('/graph2/', { method: 'POST', body: JSON.stringify({'data':data, 'prop': prop})});
-    console.log('graph2 response: ',await query)
+    const query = await fetch('/graph/', { method: 'POST', body: JSON.stringify({'data':data, 'prop': prop})});
+    console.log('graph response: ',await query)
     const response = await query.json();
     console.log('api graph 2  response: ', response)
     return response
@@ -1013,7 +1015,7 @@ async function calc_IndexData(){
 
     console.log('function for sending the data');
 
-    const query = await fetch('/flask/', { method: 'POST', body: JSON.stringify(data_aspern_blocks)});
+    const query = await fetch('/index/', { method: 'POST', body: JSON.stringify(data_aspern_blocks)});
     const data = await query.json();
     console.log(data);
     data_shannon_index = data;

@@ -12,52 +12,52 @@ app = Flask(__name__)
 
 @app.route("/", methods=['GET'])
 def home():
-    return render_template('index.html')
+    return render_template('main.html')
 
 
-@app.route("/data/final/aspern_blocks_final.geojson", methods=['GET'])
+@app.route("/blocks/", methods=['GET'])
 def blocks():
     with open(join('data', 'aspern_blocks_final.geojson'), encoding='utf-8') as f:
         return f.read()
 
-@app.route("/data/final/aspern_landcover_final.geojson", methods=['GET'])
+@app.route("/landcover/", methods=['GET'])
 def landcover():
     with open(join('data', 'aspern_landcover_final.geojson'), encoding='utf-8') as f:
         return f.read()
 
-@app.route("/data/final/aspern_bkmBlocks.geojson", methods=['GET'])
+@app.route("/bkmBlocks/", methods=['GET'])
 def bkmblocks():
     with open(join('data', 'aspern_bkmBlocks.geojson'), encoding='utf-8') as f:
         return f.read()
 
-@app.route("/data/final/aspern_roads.geojson", methods=['GET'])
+@app.route("/roads/", methods=['GET'])
 def roads():
     with open(join('data', 'aspern_roads.geojson'), encoding='utf-8') as f:
         return f.read()
 
-@app.route("/data/final/aspern_publiclines.geojson", methods=['GET'])
+@app.route("/publiclines/", methods=['GET'])
 def publines():
     with open(join('data', 'aspern_publiclines.geojson'), encoding='utf-8') as f:
         return f.read()
 
-@app.route("/data/final/aspern_trees_blocks.geojson", methods=['GET'])
+@app.route("/trees/", methods=['GET'])
 def trees():
     with open(join('data', 'aspern_trees_blocks.geojson'), encoding='utf-8') as f:
         return f.read()
 
-@app.route("/data/final/aspern_publicstops.geojson", methods=['GET'])
+@app.route("/publicstops/", methods=['GET'])
 def pubstops():
     with open(join('data', 'aspern_publicstops.geojson'), encoding='utf-8') as f:
         return f.read()
 
-@app.route("/data/final/shops.geojson", methods=['GET'])
+@app.route("/shops/", methods=['GET'])
 def shops():
     with open(join('data', 'shops.geojson'), encoding='utf-8') as f:
         return f.read()
 
 
 
-@app.route('/flask/', methods=['POST'])
+@app.route('/index/', methods=['POST'])
 def post_calculated_data():
     #steps:
     # get data from map,
@@ -95,11 +95,6 @@ def post_calculated_accessibility():
     dist = dict['dist']
     print(poi, dict)
 
-    # if poi == 'transport':
-    #     poi_file = gpd.read_file(r'webapp\data\final\aspern_publicstops.geojson')
-    # else:
-    #     poi_file = gpd.read_file(r'webapp\data\final\shops.geojson')
-
     blocks_file = gpd.read_file(join('data', 'aspern_blocks_final.geojson'))
 
     poi_file = gpd.GeoDataFrame.from_features(dict['poi'], crs="EPSG:4326")
@@ -112,16 +107,14 @@ def post_calculated_accessibility():
     print('accessibility result: ', result)
     blocksWithinDist, bufArea_dis =result
     print('type blocksWithinDist: ', type(blocksWithinDist))
-    # return blocksWithinDist.to_json()
     response = {'blocks': blocksWithinDist.to_json(), 'buffer': bufArea_dis.to_json()}
-    #return blocksWithinDist.to_json() #, bufArea_dis.to_json()
 
     return response
 
 
-@app.route('/graph2/', methods=['POST'])
-def post_calculated_graph2_data():
-    print('graph 2 route')
+@app.route('/graph/', methods=['POST'])
+def post_calculated_graph_data():
+    print('graph route')
     dict = json.loads((request.data).decode())
     df = gpd.GeoDataFrame.from_features(dict['data'], crs="EPSG:4326")
     print('df', df)
@@ -131,7 +124,6 @@ def post_calculated_graph2_data():
     print('graph data: ', result)
     print(type(result))
 
-    #return {'result': result}
     return result
 
 
