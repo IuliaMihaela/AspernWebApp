@@ -1,0 +1,19 @@
+{
+    "public_transport_lines":{
+        "source": "aspern_publiclines.geojson",
+        "geometry": "line",
+        "properties":[
+            "OBJECTID",
+            "line",
+            "line_type_code",
+            {"line_type": {
+                "front_end_instructions": {
+                    "layerName": "means of transport",
+                    "dataType" : "categorical",
+                    "tools": ["select", "draw"],
+                    "chart": "None"
+                }
+            }}
+        ]
+    }
+}

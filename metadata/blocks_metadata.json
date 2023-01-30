@@ -1,0 +1,66 @@
+
+{
+    "blocks" : {
+        "source": "aspern_blocks_final.geojson",
+        "geometry": "polygon",
+        "properties": [
+            "OBJECTID",
+            "block_area",
+            "block_peri",
+            "main_cover",
+            "openspace",
+            "area_build_abs",
+            "area_build_rel",
+            "area_green_abs",
+            {"area_green_rel": {
+                "front_end_instructions": {
+                    "layerName": "green area",
+                    "dataType" : "numerical",
+                    "tools": ["select"],
+                    "chart": "histogram"
+                }
+            }},
+            "area_seal_abs",
+            "area_seal_rel",
+            "are_constr_abs",
+            "area_const_rel",
+            "area_water_abs",
+            "area_water_rel",
+            {"OSR": {
+                "front_end_instructions": {
+                    "layerName": "open space ratio",
+                    "dataType" : "numerical",
+                    "tools": ["select"],
+                    "chart": "histogram"
+                }
+            }},
+            {"maximum_height": {
+                "front_end_instructions": {
+                    "layerName": "maximum building height",
+                    "dataType" : "numerical",
+                    "tools": ["select"],
+                    "chart": "histogram"
+                }
+            }},
+            "shop_count",
+            "zoning_code",
+            {"zoning": {
+                "front_end_instructions": {
+                    "layerName": "zoning category",
+                    "dataType" : "categorical",
+                    "tools": ["select"],
+                    "chart": "piechart"
+                }
+            }},
+            {"landuse": {
+                "front_end_instructions": {
+                    "layerName": "landuse category",
+                    "dataType" : "categorical",
+                    "tools": ["select", "landuse_change"],
+                    "chart": "piechart"
+                }
+            }}
+        
+        ]
+    }
+}

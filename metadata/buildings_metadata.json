@@ -1,0 +1,21 @@
+{
+    "buildings": {
+        "source": "aspern_bkmBlocks.geojson",
+        "geometry": "polygons",
+        "properties": [
+            "class",
+            "type",
+            "BEZUG",
+            "height_class",
+            {"height": {
+                "front_end_instructions": {
+                    "layerName": "None",
+                    "dataType" : "numerical",
+                    "tools": "None",
+                    "chart": "None"
+                }
+            }},
+            "FMZK_ID"
+        ]
+    }
+}

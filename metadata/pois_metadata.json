@@ -1,0 +1,20 @@
+
+{    
+    "POIS": {
+        "shops_services": {
+            "source": "aspern_shops.geojson",
+            "geometry": "point",
+            "properties": [
+                "osm_id",
+                {"shop": {
+                    "front_end_instructions": {
+                        "layerName": "type of shop/service",
+                        "dataType" : "categorical",
+                        "tools": ["select", "draw"],
+                        "chart": "None"
+                    }
+                }}
+            ]
+        } 
+    }
+}

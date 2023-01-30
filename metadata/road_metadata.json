@@ -1,0 +1,30 @@
+{
+    "street": {
+        "source": "aspern_roads.geojson",
+        "geometry": "line",
+        "properties": [
+            "OBJECTID",
+            "name",
+            "category_code",
+            {"category": {
+                "front_end_instructions": {
+                    "layerName": "category",
+                    "dataType" : "categorical",
+                    "tools": "None",
+                    "chart": "None"
+                }
+            }},
+            "form_code",
+            {"form": {
+                "front_end_instructions": {
+                    "layerName": "construction form of section",
+                    "dataType" : "categorical",
+                    "tools": "None",
+                    "chart": "None"
+                }
+            }},
+            "width",
+            "lenght"
+        ]
+    }
+}

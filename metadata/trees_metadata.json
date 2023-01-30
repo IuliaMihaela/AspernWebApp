@@ -1,0 +1,20 @@
+{
+    "trees": {
+        "source": "aspern_trees_blocks.geojson",
+        "geometry": "point",
+        "properties":[
+            "Baum_ID",
+            "species",
+            "height_code",
+            "address",
+            {"height": {
+                "front_end_instructions": {
+                    "layerName": "tree height",
+                    "dataType" : "numerical",
+                    "tools": ["select"],
+                    "chart": "Histogram"
+                }
+            }}
+        ] 
+    }
+}

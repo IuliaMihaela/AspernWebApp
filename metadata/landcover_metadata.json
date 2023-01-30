@@ -1,0 +1,19 @@
+{
+    "land_cover": {
+        "source": "aspern_landcover_final.geojson",
+        "geometry": "polygon",
+        "properties": [
+            {"class": {
+                "front_end_instructions": {
+                    "layerName": "land cover",
+                    "dataType" : "categorical",
+                    "tools": ["select"],
+                    "chart": "piechart"
+                }
+            }},
+            "height",
+            "OBJECTID",
+            "area"
+        ]
+    }
+}

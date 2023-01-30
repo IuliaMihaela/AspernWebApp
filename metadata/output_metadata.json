@@ -1,0 +1,45 @@
+{
+    "analysisOutputMetadata": [
+        {
+            "shannon_index": { 
+				"InputArguments": {
+                    "source_layers": ["blocks"], 
+                    "landUseCol" : "landuse", 
+                    "radius": {
+                        "dataTyp" : "integer", 
+                        "default": 500, 
+                        "lowerBound": 200, 
+                        "upperBound": 700 
+                    }
+                }, 
+                "back_end_instructions": "poly_shannon.py",
+                "front_end_instructions": {
+                    "propertyForVisualization": "div_index",
+                    "layerName": "Shannon Diversity Index",
+                    "analysis_result_data": {
+                        "data_type": "numerical",
+                        "geometry": "polygons"
+                    },
+                    "chart": "histogram"
+                }
+            },
+
+            "accessibility": {
+                "InputArguments": {
+                    "source_layers": ["public_transport_stops", "shops"], 
+                    "distance": [100, 200, 300, 400, 500]
+                },
+                "back_end_instructions": "distance_calc.py",
+                "front_end_instructions": {
+                    "propertyForVisualization": "geometry",
+                    "layerName": "Accessibility",
+                    "analysis_result_data": {
+                        "data_type": "geometry",
+                        "geometry": "polygons"
+                    },
+                    "chart": "None"
+                }
+            }
+        }
+    ]
+}

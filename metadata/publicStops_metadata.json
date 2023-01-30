@@ -1,0 +1,27 @@
+{
+    "public_transport_stops": {
+        "source": "aspern_publicstops.geojson",
+        "geometry": "point",
+        "properties": [
+            "OBEJCTID",
+            {"stop_name": {
+                "front_end_instructions": {
+                    "layerName": "means of transport",
+                    "dataType" : "categorical",
+                    "tools": ["select", "draw"],
+                    "chart": "None"
+                }
+            }},
+            "line",
+            "line_type_code",
+            {"line_type": {
+                "front_end_instructions": {
+                    "layerName": "means of transport",
+                    "dataType" : "categorical",
+                    "tools": ["select"],
+                    "chart": "None"
+                }
+            }}
+        ]
+    }
+}
