@@ -1,0 +1,570 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+#map {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    z-index: 0;
+    width: 100%;
+}
+
+/*for the legend colors*/
+ul span{
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    margin-right: 8px;
+    border-radius: 30%
+}
+
+/*for the list inside the properties popup*/
+.list-group {
+    width: 240px;
+}
+
+.mapboxgl-popup {
+    max-width: 250px;
+}
+
+.mapboxgl-popup-content{
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.1);
+    margin-bottom: 0;
+    width: 250px;
+    -webkit-text-size-adjust: auto;
+}
+
+
+p {
+  font-family: 'Open Sans';
+  margin: 0;
+  font-size: 13px;
+}
+
+.header {
+    overflow: hidden;
+    padding: 20px 10px;
+}
+
+.form-control {
+    width: auto;
+}
+
+.form-check-input:checked {
+    background-color: #404040;
+    border-color:rgba(0, 0, 0, 0.25);
+}
+
+/* for the range */
+/* source: https://stackoverflow.com/questions/40534973/changing-the-color-of-the-range-slider-in-materializecss */
+input[type=range]::-webkit-slider-thumb {
+    background-color: #757d82;
+}
+input[type=range]::-moz-range-thumb {
+    background-color: #757d82;
+}
+input[type=range]::-ms-thumb {
+    background-color: #757d82;
+}
+/***** These are to edit the thumb and the text inside the thumb *****/
+input[type=range] + .thumb {
+    background-color: #dedede;
+}
+input[type=range] + .thumb.active .value {
+    color: #757d82;
+}
+
+[type="checkbox"]:checked+label:before {
+    border-right: 2px solid #757d82;
+    border-bottom: 2px solid #757d82;
+}
+
+.btn-group-sm {
+    position: absolute;
+    z-index: 1;
+    top: 10px;
+    right: 80px;
+    align-content:flex-start
+}
+
+.btn-group-sm>.btn, .btn-sm {
+    --bs-btn-font-size: 0.75rem;
+}
+
+.btn {
+    --bs-btn-padding-x: none;
+}
+
+/* style scrollbar */
+#main_layers::-webkit-scrollbar {
+    width: 12px;               /* width of the entire scrollbar */
+}
+#main_layers::-webkit-scrollbar-track {
+    background: whitesmoke;        /* color of the tracking area */
+}
+#main_layers::-webkit-scrollbar-thumb {
+    background-color: darkgrey;    /* color of the scroll thumb */
+    border-radius: 20px;       /* roundness of the scroll thumb */
+    border: 3px solid whitesmoke;  /* creates padding around scroll thumb */
+}
+#analysis_layers::-webkit-scrollbar {
+    width: 12px;               /* width of the entire scrollbar */
+}
+#analysis_layers::-webkit-scrollbar-track {
+    background: whitesmoke;        /* color of the tracking area */
+}
+#analysis_layers::-webkit-scrollbar-thumb {
+    background-color: darkgrey;    /* color of the scroll thumb */
+    border-radius: 20px;       /* roundness of the scroll thumb */
+    border: 3px solid whitesmoke;  /* creates padding around scroll thumb */
+}
+
+form {
+    font-size: 14px;
+}
+
+select {
+    border-color: #f2f2f21a;
+}
+select option:hover {
+    background-color: #404040;
+}
+
+/*toggle 3d later button */
+.form-switch {
+  position: absolute;
+  right: 1%;
+  z-index: 1;
+  width: 60px;
+  height: 34px;
+  bottom: 6%
+}
+
+/*show only the tick from materialize, hide the bootstrap checkbox*/
+[type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+    visibility: hidden;
+}
+
+/*3d button change colors*/
+ .form-check-input:focus {
+    border-color: rgb(108 117 125);
+    box-shadow: 0 0 0 0.25rem #6c757d45;
+}
+ .form-switch .form-check-input:focus {
+    background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'><circle r='3' fill='%231a2224bf'/></svg>");
+}
+ .form-check-input:checked {
+    background-color: #6c757d;
+    border-color: rgba(0, 0, 0, 0.25);
+}
+
+/*for the 3d checkbox, hide the materialize tick */
+#aspern_bkmBlocks:not(:checked), #aspern_bkmBlocks:checked {
+    visibility: visible;
+}
+#aspern_bkmBlocks:not(:checked), #aspern_bkmBlocks:checked {
+    position: initial;
+}
+#aspern_bkmBlocks+label:before {
+    content: none;
+}
+#aspern_bkmBlocks+label {
+    padding-left:0px;
+}
+
+input[type=text]:focus:not([readonly]){
+    border-bottom: 1px solid transparent;
+    box-shadow: 0 1px 0 0 transparent;
+}
+input[type=text] {
+    border-bottom: 1px solid transparent
+}
+
+button:focus {
+    background-color: lightgray;
+}
+
+/*color range */
+.row {
+  height: 12px;
+  width: 100%;
+
+  --bs-gutter-x: 0;
+}
+
+.colors {
+  margin-bottom: 5px;
+
+}
+
+.labels .label {
+  width: 15%;
+  display: inline-block;
+  text-align: center;
+}
+
+li.label {
+  width: 6.7%;
+  display: inline-block;
+  text-align: center;
+}
+
+.collapse .card-body {
+    position: relative;
+}
+.collapse {
+    position: relative;
+}
+
+/*Layers sections */
+#blocks_group {
+    position: relative;
+    z-index: 0;
+    top: 2%;
+    right: 1%;
+    align-content: flex-start;
+}
+
+#blocks_content {
+    position: relative;
+    z-index: 1;
+    top: 5%;
+    right: 1%;
+}
+
+#landuse_group {
+    position: relative;
+    z-index: 0;
+    top: 8%;
+    right: 1%;
+    align-content: flex-start;
+}
+
+#landuse_content {
+    position: relative;
+    top: 11%;
+    right: 1%;
+    z-index: 1;
+}
+
+#zoning_group {
+    position: relative;
+    z-index: 0;
+    top: 14%;
+    right: 1%;
+    align-content: flex-start;
+}
+
+#zoning_content {
+    position: relative;
+    top: 17%;
+    right: 1%;
+    z-index: 1;
+}
+
+#streets_group {
+    position: relative;
+    z-index: 0;
+    top: 20%;
+    right: 1%;
+    align-content: flex-start;
+}
+
+#streets_content {
+    position: relative;
+    top: 23%;
+    right: 1%;
+    z-index: 1;
+}
+
+#public_lines_group {
+    position: relative;
+    z-index: 0;
+    top: 26%;
+    right: 1%;
+    align-content: flex-start;
+}
+
+#public_lines_content {
+    position: relative;
+    top: 29%;
+    right: 1%;
+    z-index: 1;
+}
+
+#shops_group {
+    position: relative;
+    z-index: 0;
+    top: 32%;
+    right: 1%;
+    align-content: flex-start;
+}
+
+#shops_content {
+    position: relative;
+    top: 35%;
+    right: 1%;
+    z-index: 1;
+}
+
+#trees_group {
+    position: relative;
+    z-index: 0;
+    top: 38%;
+    right: 1%;
+    align-content: flex-start;
+}
+
+#trees_content {
+    position: relative;
+    top: 41%;
+    right: 1%;
+    z-index: 1;
+}
+
+#public_stations_group {
+    position: relative;
+    z-index: 0;
+    top: 44%;
+    right: 1%;
+    align-content: flex-start;
+}
+
+#public_stations_content {
+    position: relative;
+    top: 47%;
+    right: 1%;
+    z-index: 1;
+}
+
+/*shannon button */
+#shannon_group {
+    position: relative;
+    z-index: 0;
+    top: 50%;
+    right: 1%;
+    align-content: flex-start;
+}
+
+#shannon_content {
+    position: relative;
+    z-index: 1;
+    top: 53%;
+    right: 1%;
+}
+
+#green_group {
+    position: relative;
+    z-index: 0;
+    top: 56%;
+    right: 1%;
+    align-content: flex-start;
+}
+
+#green_content {
+    position: relative;
+    top: 59%;
+    right: 1%;
+    z-index: 1;
+}
+
+#osr_group {
+    position: relative;
+    z-index: 0;
+    top: 62%;
+    right: 1%;
+    align-content: flex-start;
+}
+
+#osr_content {
+    position: relative;
+    top: 65%;
+    right: 1%;
+    z-index: 1;
+}
+
+#max_height_group {
+    position: relative;
+    z-index: 0;
+    top: 68%;
+    right: 1%;
+    align-content: flex-start;
+}
+
+#max_height_content {
+    position: relative;
+    top: 71%;
+    right: 1%;
+    z-index: 1;
+}
+
+#accessibility_group {
+    position: relative;
+    z-index: 0;
+    top: 74%;
+    right: 1%;
+    align-content: flex-start;
+}
+
+#accessibility_content {
+    position: relative;
+    /*top: 77%;*/
+    right: 1%;
+    z-index: 1;
+    bottom: 24%;
+}
+
+
+.btn:hover {
+    background-color: #6c757d;
+    border-color: #2125296b;
+}
+.btn:active {
+    background-color: #6c757d;
+    border-color: #2125296b;
+}
+.btn:focus {
+    background-color: #6c757d;
+    border-color: #2125296b;
+}
+
+.btn-group>.btn {
+    height: 25px;
+    width: 140px;
+}
+
+.card {
+    width: 18rem;
+    /*display:none;*/
+    height: 20%
+}
+.card-body{
+    height: 90%;  padding-top: 1px;
+}
+
+#shannon_content .label {
+    width: 19%;
+}
+
+.spinner-border-sm {
+--bs-spinner-border-width: 0.1em;
+}
+
+.card .btn-close{
+    position: absolute;
+    right: 0px;
+}
+
+#accessibility_content .card-body{
+    padding: 0;
+}
+
+/*for the graphs*/
+ .js-plotly-plot .plotly .main-svg {
+    width: 250px;
+}
+
+/*for the text and checkbox style*/
+[type="checkbox"]+label {
+    padding-left: 25px;
+    line-height: 15px;
+    font-size: small;
+    position: initial;
+}
+[type="checkbox"]+label:before {
+    margin-top: 0;
+}
+label {
+    color: #4d5255;
+}
+
+.collapse .card-body {
+    height: 2%;
+    max-width: 30%;
+}
+
+/*toolbar*/
+#toolbar{
+    bottom: 0%;
+    z-index: 1;
+    position: absolute;
+    align-self: center;
+    right:45%;
+    height: fit-content;
+    background: transparent;
+}
+
+#main_layers {
+    position: absolute;
+    left: 1%;
+    top: 1%;
+    overflow-y: auto;
+    max-height: 100%;
+    overflow-x: hidden;
+}
+
+.collapsible-header {
+    background: transparent;
+}
+
+.collapsible {
+    padding-left: 0px;
+    width: 18rem;
+}
+
+#analysis_layers {
+    position: absolute;
+    right: 1%;
+    top: 1%;
+    overflow-y: auto;
+    max-height: 100%;
+    overflow-x: hidden;
+}
+
+.btn-outline-dark {
+    --bs-btn-border-color: rgb(26 34 36 / 25%);
+}
+
+#toggle_toolbar_header .toggle {
+    font-size: medium;
+}
+#toolbar_content_but_group .btn {
+    height: fit-content;
+}
+
+/*draw feature */
+.mapboxgl-ctrl-top-right {
+    top: 91%;
+    right:42%
+}
+
+/*input on the toolbar footer for the new data properties*/
+#toolbar_footer input[type=text]:focus:not([readonly]) {
+    background-color: transparent;
+}
+ #toolbar_footer .input-group-text {
+    background-color: transparent;
+    border: 1px solid #757d82;
+}
+
+.min_legend{
+    width: 200px;
+}
+
+section .btn-group-sm {
+    padding-left: 2rem;
+}
+
+/*make the legend text small*/
+.max_legend {
+    font-size: small;
+    text-indent: -0.5rem
+}
+
+/*make the 2nd raw of an list item start with spacing*/
+.collapsible-body p {
+    padding:0;
+ }
